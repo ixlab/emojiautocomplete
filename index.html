@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://ixlab.github.io/emojiautocomplete/static/images/preview.jpg" />
+  <title>Emojis in Autocompletion: Enhancing Video Search with Visual Cues</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Emojis in Autocompletion:<p> Enhancing Video Search with Visual Cues</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://hojinyoo.info/">Hojin Yoo</a>,</span>
+              <span class="author-block">
+                <a href="https://arnab.org">Arnab Nandi</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">The Ohio State University</span>
+              <p class="author-block"><br/><em>To appear at <a href="https://hilda.io/2025/">HILDA 2025</a></em></p>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./static/pdf/emojis_in_autocompletion.pdf" class="external-link button is-normal is-rounded is-dark" download>
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://example.com" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://example.com" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://emoji.searchimage.org/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-smile"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://doi.org/10.1145/3736733.3736745" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-link"></i>
+                    </span>
+                    <span>DOI</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="videoPlayer" width="100%" preload autoplay muted loop playsinline>
+          <source src="static/images/emojiautocomplete-diagram.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Safari will not autoplay a video tag if it's in low power mode. Here's the Apple-spesific workaround. -->
+        <img id="safariVideoPlayer" src="static/images/emojiautocomplete-diagram.mp4" alt="" style="width: 100%; display: none;" />
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            if (isSafari) {
+              var videoPlayer = document.getElementById('videoPlayer');
+              var imageFallback = document.getElementById('safariVideoPlayer');
+              videoPlayer.style.display = 'none';
+              imageFallback.style.display = 'block';
+            }
+          });
+        </script>
+
+        <h2 class="subtitle has-text-centered">
+          An innovative autocompletion system that integrates <em>visual cues</em>, specifically, representative emojis, into the query formulation process to enhance video search efficiency.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Effective video search is increasingly challenging due to the inherent complexity and richness of video content, which traditional full-text query systems and text-based autocompletion methods struggle to capture. 
+              In this work, we propose an innovative autocompletion system that integrates visual cues, specifically, representative emojis, into the query formulation process to enhance video search efficiency. 
+              Our approach leverages cutting-edge Vision-Language Models (VLMs) to generate detailed scene descriptions from videos and employs Large Language Models (LLMs) to distill these descriptions into succinct, segmented search phrases augmented with context-specific emojis. 
+              A controlled user study, conducted with 11 university students using the MSVD dataset, demonstrates that the emoji-enhanced autocompletion reduces the average query completion time by 2.27 seconds (14.6% decrease) compared to traditional text-based methods, while qualitative feedback indicates mixed but generally positive user perceptions. 
+              These results highlight the potential of combining linguistic and visual modalities to redefine interactive video search experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Challenges in Video Search</h2>
+
+          <div class="content has-text-justified">
+            <ul>
+              <li>
+                <b>Visual Ccomplexity:</b> Text queries often fail to capture the key elements and rich relationships in a scene (e.g., a car yielding to a pedestrian).
+              </li>
+              <li>
+                <b>The Vocabulary Gap:</b> Users struggle to recall the precise terms needed to describe a complex visual event.
+              </li>
+              <li>
+                <b>Cognitive Overload:</b> Mentally translating a complex visual into a long, specific text phrase is mentally taxing and unnatural for most users.
+              </li>
+            </ul>
+          </div>
+
+          <br />
+
+          <h2 class="title is-3">Emoji-Enhanced Autocompletion System</h2>
+          <div class="content has-text-justified">
+            <ul>
+              <li>
+                <b>Objective:</b> To accelerate user identification of relevant autocompletion suggestions.
+              </li>
+              <li>
+                <b>Mechanism:</b> Use emojis as pre-attentive visual cues, allowing users to quickly spot potentially relevant items before reading the full text suggestion.
+              </li>
+              <li>
+                <b>Desired Benefit:</b> Reduced cognitive load, faster task completion, and an improved user experience.
+              </li>
+            </ul>
+          </div>
+          <br />
+
+          <h3 class="title is-4">Implementation</h2>
+
+          <div style="text-align: center;">
+            
+          </div>
+          <div class="content has-text-justified">
+            <img src="static/images/implementation.png" alt="Emoji Autocompletion System" 
+              style="display: block; margin: auto; width: 100%" />
+            <p style="font-size: 0.8em; text-align: center;">Generation Procedure of Emoji-Enhanced Autocompletion</p>
+            <p>
+              Our system utilizes a two-stage pipeline. First, a Vision-Language Model (VLM) generates a detailed textual description of the video's content. This description is then processed by a Large Language Model (LLM), which distills it into concise, segmented search phrases. For each segment, the LLM assigns a representative emoji and an importance score, creating a compact, semantically rich query suggestion.
+            </p>
+          </div>
+
+          <br />
+
+          <h3 class="title is-4">Prompt Design for Phrase and Emoji Generation</h2>
+          <div class="content has-text-justified">
+            <p>
+              To generate the emoji-enhanced search phrases, we provide a detailed prompt to a Large Language Model (LLM). This prompt includes specific instructions and examples to guide the model in creating concise, relevant, and visually annotated phrases from a given video description. Below is a sample of the prompt structure we use.
+            </p>
+            <pre style="white-space: pre-wrap; word-wrap: break-word; text-align: left; background-color: #f5f5f5; padding: 1em; border-radius: 4px;"><code>
+Extract at most 10 search phrases and emojis from the video description paragraph provided above that can be used to find the video.
+Requirements:
+- Each search phrase must include the objects' actions, characters, and background, directly from the video description.
+- Accurately capture the relationships or interactions between objects/characters when applicable.
+- Every search phrase must be concise and intuitive between 5 to 10 words.
+- Use diverse vocabulary for each phrase, avoiding repetitive or overly similar phrases.
+- The emojis should help users to understand the search phrase visually like the examples below.
+- Assign an emoji for a phrase which has a specific meaning in the whole phrase like the examples below. 
+- Do NOT generate search phrases related to feelings, atmosphere, or emotions.
+- Do NOT include phrases describing scene cuts or camera motions.
+
+Example:
+- 🚦intersection 🚗red car ➡️turning right 🚧cautiously
+- 🚚truck 💥crash 🏍️with motorcycle 😱in front of ego vehicle
+- 🚴cyclist ⬅️makes left turn 🚦at intersection
+- 🚗car 🛑stops 🚦at red light ⬇️slowing down its speed
+- 👕white shirt 👩woman 🚶at crosswalk 👖wear black-pants
+
+Please generate a Python list as a string. Each list item should be a dictionary with the following keys: "phrase", "split", "emojis", and "importance".
+- The value of "phrase" should be a string representing a search phrase.
+- The value of "split" should be a list of strings, where each item represents a meaningful segment of the search phrase.
+- The value of "emojis" should be a list of emojis corresponding to each item in "split". The lengths of "split" and "emojis" must be the same.
+- The value of "importance" should be a list of floating-point numbers representing the relative significance of each phrase segment in "split", where higher values indicate greater importance, all values sum to exactly 1.0, and the list length matches that of "split".
+DO NOT PROVIDE ANY OTHER OUTPUT TEXT OR EXPLANATION. Only return the Python list as a string.
+For example, your response should look like this:
+[
+    {
+        "phrase": "intersection red car turning right",
+        "split": ["intersection", "red car", "turning right", "cautiously"],
+        "emojis": ["🚦", "🚗", "➡️", "🚧"],
+        "importance": [0.2, 0.4, 0.3, 0.1]
+    },
+    {
+        "phrase": "truck crash with motorcycle in front of ego vehicle",
+        "split": ["truck", "crash", "with motorcycle", "in front of ego vehicle"],
+        "emojis": ["🚚", "💥", "🏍️", "😱"],
+        "importance": [0.3, 0.3, 0.3, 0.1]
+    }
+]
+            </code></pre>
+            <p style="font-size: 0.8em; text-align: center;">A Structured Prompt Design for Phrase and Emoji Generation</p>
+          </div>
+          <br />
+
+          <h2 class="title is-3">Experiment</h2>
+          <div class="content has-text-justified">
+            <p>
+              We conducted a user study with 11 university students to evaluate the <em>usability of the emoji-enhanced</em> autocompletion system for video search.
+            </p>
+          <div class="content has-text-justified">
+            <img src="static/images/result.png" alt="User study results"
+              style="display: block; margin: auto; width: 60%;" />
+            <p style="font-size: 0.8em; text-align: center;">Comparison on Average Query Completion Time</p>
+            <p>
+              The results show that the mean Query Completion Time (QCT) for the text-only autocompletion was 15.55 seconds, whereas the emoji-text autocompletion reduced the average QCT to 13.28 seconds (a net <b>decrease of 2.27 seconds</b>).            </p>
+          </div>
+        </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{yoo2025emojis,
+        title={Emojis in Autocompletion: Enhancing Video Search with Visual Cues},
+        author={Yoo, Hojin and Nandi, Arnab},
+        booktitle={Proceedings of the 2025 Workshop on Human-In-the-Loop Data Analytics},
+        year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <!-- <p>
+              This material is based upon work supported by the National Science Foundation under Award No. 1910356. Any
+              opinions, findings and conclusions or recommendations expressed in this material are those of the
+              author(s) and do not necessarily reflect the views of the National Science Foundation.
+            </p> -->
+            <p>
+              This website is website adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
