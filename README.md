@@ -1,1 +1,8 @@
 ### The [website](https://ixlab.github.io/emojiautocomplete/) for Emojis in Autocompletion: Enhancing Video Search with Visual Cues
+
+### Abstract
+Effective video search is increasingly challenging due to the inherent complexity and richness of video content, which traditional full-text query systems and text-based autocompletion methods struggle to capture. In this work, we propose an innovative autocompletion system that integrates visual cues, specifically, representative emojis, into the query formulation process to enhance video search efficiency. Our approach leverages cutting-edge Vision-Language Models (VLMs) to generate detailed scene descriptions from videos and employs Large Language Models (LLMs) to distill these descriptions into succinct, segmented search phrases augmented with context-specific emojis. A controlled user study, conducted with 11 university students using the MSVD dataset, demonstrates that the emoji-enhanced autocompletion reduces the average query completion time by 2.27 seconds (14.6% decrease) compared to traditional text-based methods, while qualitative feedback indicates mixed but generally positive user perceptions. These results highlight the potential of combining linguistic and visual modalities to redefine interactive video search experiences.
+
+Sponsors: 
+* [National Science Foundation](https://nsf.gov)
+* [Honda Research Institute](https://usa.honda-ri.com) | [99P Labs](https://medium.com/99p-labs)
