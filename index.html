@@ -190,7 +190,7 @@
               style="display: block; margin: auto; width: 100%" />
             <p style="font-size: 0.8em; text-align: center;">Generation Procedure of Emoji-Enhanced Autocompletion</p>
             <p>
-              Our system utilizes a two-stage pipeline. First, a Vision-Language Model (VLM) generates a detailed textual description of the video's content. This description is then processed by a Large Language Model (LLM), which distills it into concise, segmented search phrases. For each segment, the LLM assigns a representative emoji and an importance score, creating a compact, semantically rich query suggestion.
+              Our system utilizes a two-stage pipeline. First, VLMs generate a detailed textual description of the video's content. This description is then processed by LLMs, which distill it into concise, segmented search phrases. For each segment, the LLMs assign a representative emoji and an importance score, creating a compact, semantically rich query suggestion.
             </p>
           </div>
 
@@ -199,7 +199,7 @@
           <h3 class="title is-4">Prompt Design for Phrase and Emoji Generation</h2>
           <div class="content has-text-justified">
             <p>
-              To generate the emoji-enhanced search phrases, we provide a detailed prompt to a Large Language Model (LLM). This prompt includes specific instructions and examples to guide the model in creating concise, relevant, and visually annotated phrases from a given video description. Below is a sample of the prompt structure we use.
+              To generate the emoji-enhanced search phrases, we provide a detailed prompt to LLMs. This prompt includes specific instructions and examples to guide the model in creating concise, relevant, and visually annotated phrases from a given video description. Below is a sample of the prompt structure we use.
             </p>
             <pre style="white-space: pre-wrap; word-wrap: break-word; text-align: left; background-color: #f5f5f5; padding: 1em; border-radius: 4px;"><code>
 Extract at most 10 search phrases and emojis from the video description paragraph provided above that can be used to find the video.
